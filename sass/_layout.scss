@@ -1,0 +1,97 @@
+.container{
+max-width: 120rem;//if we dont have 1200px, we will simply occupy 100% of viewport width
+margin: 8rem auto;
+background-color: var(--color-grey-light-2);
+box-shadow: var(--shadow-dark);
+min-height: 50rem;
+
+@media only screen and (max-width: $bp-largest){
+    margin: 0;
+    //to remove background after 1100px cuz it is no longer 1200px as ,ax width,but 960px(120*8)
+    max-width: 100%;
+    width: 100%;
+}
+}
+
+.header{
+    font-size: 1.4rem;
+height: 7rem;
+background-color: #fff;
+border-bottom: var(--line);
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+@media only screen and (max-width: $bp-smallest){
+    flex-wrap: wrap;//so that search bar moves down on order 1
+    align-content: space-around;
+    height: 11rem;
+}
+}
+
+.content{
+display: flex;
+
+@media only screen and (max-width: $bp-medium){
+ flex-direction: column;
+}
+}
+
+.sidebar{
+background-color: var(--color-grey-dark-1);
+flex: 0 0 18%;//we dont want it to grow as much as the space is available,nor we want it to shrink on less space available so 0 0,but we set 18% so it will become small automatically
+
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.hotel-view{
+    background-color: #fff;
+    flex: 1;//we want it to occupy the entire remaining space so flex-grow: 1;
+}
+
+.detail{
+    font-size: 1.4rem;
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--line);
+
+  @media only screen and (max-width: $bp-medium){
+    padding: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small){
+        flex-direction: column;
+        }
+}
+
+.description{
+    
+ background-color: #FFF;
+ box-shadow: var(--shadow-light);
+ padding: 3rem;
+ flex: 0 0 60%;
+ margin-right: 4.5rem;//same as padding od detail
+
+ @media only screen and (max-width: $bp-medium){
+    padding: 2rem;
+    margin-right: 3rem;//same as padding od detail
+    }
+
+    @media only screen and (max-width: $bp-small){
+        margin-right: 0;
+        margin-bottom: 3rem;
+        }
+}
+
+.user-reviews{
+  flex: 1;
+
+  //using flex to center button instead of text-alighn center to avoid centering of all texts
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
